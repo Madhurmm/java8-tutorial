@@ -8,6 +8,17 @@ public class Interface1 {
     interface Formula {
         double calculate(int a);
 
+       /* 
+        Default Methods for Interfaces
+
+        Java 8 enables us to add non-abstract method implementations to interfaces by utilizing the 
+        `default` keyword. This feature is also known as [virtual extension methods]
+        (http://stackoverflow.com/a/24102730). 
+        
+        Keywords to look for : default
+        	
+        */
+        
         default double sqrt(int a) {
             return Math.sqrt(positive(a));
         }
@@ -30,6 +41,17 @@ public class Interface1 {
         Formula.positive(-4);        // 0.0
 
 //        Formula formula2 = (a) -> sqrt( a * 100);
+        
+        
+       /* 
+        The formula is implemented as an anonymous object. The code is quite verbose: 6 lines of 
+        code for such a simple calculation of `sqrt(a * 100)`. As we'll see in the next section, 
+        there's a much nicer way of implementing single method objects in Java 8.
+        
+         Keywords to look for : anonymous object
+         
+        */    
+        
     }
 
 }
